@@ -1,0 +1,17 @@
+.header{
+    display: flex;
+    justify-content: center;
+    background-color: rgb(34, 67, 129);
+    text-align: center;
+
+}
+.header img{
+    height: 80px;
+    padding: 10px; 
+
+}
+.header h1{
+    font-size: 40px;
+    color: azure;
+    font-style: italic;
+}

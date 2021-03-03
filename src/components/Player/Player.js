@@ -1,14 +1,39 @@
-import React from 'react';
+import React from 'react'; 
+import playerData from '../../data/data.json';
+import { useState,useEffect } from 'react'
 import './player.css'
+import Team from '../Team/Team'
+import TeamBudget from '../TeamBudget/TeamBudget';
 
-const Player = (props) => {
-    const {name, age,salary,image } = props.player;
+
+const Player = () => {
+    const player15 = playerData.slice(0,15);
+    const [players, setplayers] = useState(player15);
+
+    const [cart,setCart] = useState([]);
+    
+    const handleSelectPlayer = (players) => {
+        const newPlayer = [...cart, players];
+        setCart(newPlayer);
+        
+    }
+
+    useEffect(()=>{
+        setplayers(playerData);
+    },[])
     return (
-        <div>
-            <h1>Name :{name}</h1>
-            <img src={image} alt=""/>
-            <h3>Age: {age + 'year'}</h3>
-            <h3>Salary: {salary + 'Tk'}</h3>
+        <div className='bpl-container'>
+            <div className="player-container">
+                    {
+                        playerData.map(player => <Team player={player} key = {player.id} handleSelectPlayer = {handleSelectPlayer}></Team>)
+                    }
+            </div>
+            <div className="selection-container">
+
+                <TeamBudget cart = {cart} ></TeamBudget>
+                
+            </div>
+
             
         </div>
     );
