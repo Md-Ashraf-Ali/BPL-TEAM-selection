@@ -9,8 +9,6 @@ function App() {
       <div>
         <Header></Header>
         <Player></Player>
-        
-        
       </div>
   );
 }

@@ -10,17 +10,18 @@ const Player = () => {
     const player15 = playerData.slice(0,15);
     const [players, setplayers] = useState(player15);
 
+
     const [cart,setCart] = useState([]);
     
     const handleSelectPlayer = (players) => {
         const newPlayer = [...cart, players];
         setCart(newPlayer);
-        
     }
 
     useEffect(()=>{
         setplayers(playerData);
     },[])
+    
     return (
         <div className='bpl-container'>
             <div className="player-container">
@@ -33,8 +34,6 @@ const Player = () => {
                 <TeamBudget cart = {cart} ></TeamBudget>
                 
             </div>
-
-            
         </div>
     );
 };

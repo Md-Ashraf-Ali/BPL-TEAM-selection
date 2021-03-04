@@ -20,7 +20,6 @@ const Team = (props) => {
                 <button className= 'mainBtn' onClick = {()=>props.handleSelectPlayer(props.player)}><FontAwesomeIcon icon={faUserPlus}/> Select</button>
             </div>
            
-            
         </div>
     );
 };

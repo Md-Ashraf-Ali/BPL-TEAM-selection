@@ -1,12 +1,16 @@
-import { library } from '@fortawesome/fontawesome-svg-core';
 import React from 'react';
 
 const PlayerList = (props) => {
+    const cart = props.cart;
+   
     console.log(props);
-    
+     
+
     return (
         <div>
-             <h3>{props.name}</h3>   
+            
+             <h1>{cart}</h1>
+
         </div>
     );
 };
