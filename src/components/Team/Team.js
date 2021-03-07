@@ -1,26 +1,37 @@
+
 import React from 'react';
+import { useState } from 'react';
+import Fakedata from '../Fakedata/data.json'
+import PlayerList from '../PlayerList/PlayerList';
+import TeamBudget from '../TeamBudget/TeamBudget';
 import './Team.css'
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
-import { faCoffee,faUserPlus } from '@fortawesome/free-solid-svg-icons'
-import imageTk from '../../images/image/download.jpg'
 
 
-const Team = (props) => {
-    const {name,image,salary,age } = props.player;
-    const handleSelectPlayer = props.handleSelectPlayer;
+const Team = () => {
+    const first15 = Fakedata.slice(0,15);
+   const [players, setPlayers] = useState(first15);
+
+   const [cart, setcart] = useState([]);
+
+   const addEvenHandler = (player) =>{
+       const newcart = [...cart, player];
+       setcart(newcart);
+   }
+
     return (
-        <div className='team-container'>
-            <div className="playerImage-container">
-                <img className ="Img" src={image} alt=""/> 
-            </div>
-            <div className="playerDetail-container">
-                <h1>Name: <i>{name}</i></h1>
-                <h2>Age: {age + "year"}</h2>
-                <h2>Salary: {salary + "tk"}</h2>
-                <button className= 'mainBtn' onClick = {()=>props.handleSelectPlayer(props.player)}><FontAwesomeIcon icon={faUserPlus}/> Select</button>
-            </div>
+        <div className="team-container">
+                <div className="playerDetail-container">
+                    {
+                        players.map(player => <PlayerList player = {player} addEvenHandler = {addEvenHandler}></PlayerList>)
+                    }
+                    
+                </div>
+                <div className="card-container">
+                    <TeamBudget cart ={cart}></TeamBudget>
+                </div>
            
         </div>
+        
     );
 };
 

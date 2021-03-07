@@ -1,0 +1,40 @@
+.player-data{
+    display: flex;
+    justify-content: center;
+    border: 1px solid aqua;
+    height: 350px;
+    padding-top: 43px;
+    margin: 50px;
+    box-shadow: 15px 12px 14px grey;
+    border-radius: 40px;
+    background: aqua; 
+} 
+
+.mainBtn {
+    font-size: 30px;
+    height: 40px;
+    width: 200px;
+    border-radius: 10px;
+    cursor: pointer;
+    color: white;
+    background: green;
+}
+.mainBtn:hover{
+    border-radius: 10px;
+    height:60px;
+    width: 220px;
+    background: blue;
+}
+
+.player-detail{
+    padding-right: 40px;
+}  
+
+.player-data img{
+    height: 300px;
+    width: 350px;
+    border-radius: 50%;
+    margin-right: 50px;
+    box-shadow: 15px 12px 14px rgb(21, 78, 38);
+    border: 1px black; 
+} 

@@ -1,34 +1,24 @@
+import { library } from '@fortawesome/fontawesome-svg-core';
 import React from 'react';
 import './TeamBudget.css'
 
-
 const TeamBudget = (props) => {
     const cart = props.cart;
+    console.log(cart);
+    const totalSalary = cart.reduce((total, player)=> total + player.salary, 0);
     
-    let Total = 0;
-    for (let i = 0; i < cart.length; i++) {
-        const player = cart[i];
-        Total = Total + player.salary;
-    }
-     
-    let Name = "";
-    for (let i = 0; i < cart.length; i++) {
-        const element = cart[i];
-        const playerName = element.name;
-        Name = Name.concat(playerName)+","+" ";
-    }
-    
-
     return (
         <div>
-            <div className="budget">
-            <h1> Total Team IPL Budget </h1>
-            <h3>Total Player Number: {cart.length}</h3>
-            <h3>Total Budget : {Total + "tk"}</h3>
-            <h2>#selected player list:</h2>
-            </div>
-            <div className="nameList">
-                <p>{Name}</p>
+            <h1>IPL Team Budget : </h1>
+            <h3>Total Player: {cart.length}</h3>
+            <h3>Total Budget: {totalSalary +  "tk"} </h3>
+            <div className= "playerList">
+                <h1>Selected player name list:</h1>
+                <ol>
+                    {
+                        cart.map(element => <li>{element.name}</li>)
+                    }
+                </ol>
             </div>
         </div>
     );

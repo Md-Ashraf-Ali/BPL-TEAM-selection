@@ -1,14 +1,16 @@
 import React from 'react';
-import Header from './components/Header/Header';
 import './App.css';
-import Player from './components/Player/Player';
+import Header from './components/Header/Header'
+import Team from './components/Team/Team';
+
+
 
 function App() {
- 
   return (
       <div>
         <Header></Header>
-        <Player></Player>
+        <Team></Team>
+
       </div>
   );
 }

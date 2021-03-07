@@ -1,4 +1,4 @@
-.nameList {
+.playerList {
     color: black;
     background: green;
     width: 280px;
@@ -7,7 +7,9 @@
     margin-top: 5px;
 }
 
-.nameList p{
+.playerList ol{
     font-size: 35px;
     font-style: italic;
+    background-color: brown;
+    
 }
